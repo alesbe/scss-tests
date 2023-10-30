@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="main.css"/>
+</head>
+<body>
+    <div class="c-container inline-block">
+        <div class="c-container__element c-container__element--small inline-block">Hola</div>
+        <div class="c-container__element c-container__element--big inline-block">Adios</div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="c-container inline-block">
+        <span class="c-container__element c-container__element--small inline-block">Hola</span>
+        <span class="c-container__element c-container__element--big inline-block">Adios</span>
+    </div>
+
+    <hr>
+
+    <p>
+        Lorem ipsum <span class="g-highlited">dolor</span> sit amet, consectetur adipiscing elit.
+        In congue faucibus erat, quis <span class="g-highlited">faucibus</span> ante efficitur nec.
+    </p>
+
+    <hr>
+
+    <p>
+        Lorem ipsum <div class="g-highlited">dolor</div> sit amet, consectetur adipiscing elit.
+        In congue faucibus erat, quis <div class="g-highlited">faucibus</div> ante efficitur nec.
+    </p>
+
+    <hr>
+
+    <p>
+        Lorem ipsum <span class="g-highlited inline-block">dolor</span> sit amet, consectetur adipiscing elit.
+        In congue faucibus erat, quis <span class="g-highlited inline-block">faucibus</span> ante efficitur nec.
+    </p>
+
+    <hr>
+
+    <h2>Carga CPU</h2>
+    <meter id="cpu-meter" class="c-meter" min="0" max="100" low="25" high="75" optimum="10" value="90"></meter>
+    <div>
+        <button onclick="reducirCPU()">Reducir 10%</button>
+        <button onclick="aumentarCPU()"">Aumentar 10%</button>
+    </div>
+
+    <hr>
+
+    <h2>Descarga</h2>
+
+    <button id="btn-descarga" onclick="descarga()">Descargar</button>
+    <label for="descarga">Descarga</label>
+    <progress id="descarga" value="0" max="100">0%</progress>
+    
+    <hr>
+    
+    <div class="c-card__container">
+        <div class="c-card g--box-shadow-none"></div>
+        <div class="c-card g--box-shadow-sm"></div>
+        <div class="c-card g--box-shadow"></div>
+        <div class="c-card g--box-shadow-lg"></div>
+        <div class="c-card g--box-shadow-xlg"></div>
+        <div class="c-card g--box-shadow-xxlg"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+.c-container {
+    border: 1px solid black;
+}
+
+.g-highlited {
+    font-weight: bold;
+    text-decoration: underline;
+    color: orange;
+}
+
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.c-container__element--small {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.c-container__element--big {
+    background-color: blue;
+    color: white;
+    width: 200px;
+    height: 200px;
+}
+
+.c-meter {
+    width: 300px;
+    height: 40px;
+}
+
+.c-card {
+    margin: 10px;
+    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+    background-color: whitesmoke;
+}
+
+.c-card__container {
+    display: flex;
+    flex-direction: row;
+}
+
+//$box-shadows: (
+//    0 1px 3px hsla(0, 0%, 0%, .2),
+//    0 4px 6px hsla(0, 0%, 0%, .2),
+//    0 5px 15px hsla(0, 0%, 0%, .2),
+//    0 10px 24px hsla(0, 0%, 0%, .2),
+//    0 15px 35px hsla(0, 0%, 0%, .2)
+//);
+
+$box-shadows: (
+    "none": none,
+    "sm": 0 1px 3px hsla(0, 0%, 0%, .2),
+    "": 0 4px 6px hsla(0, 0%, 0%, .2),
+    "lg": 0 5px 15px hsla(0, 0%, 0%, .2),
+    "xlg": 0 10px 24px hsla(0, 0%, 0%, .2),
+    "xxlg": 0 15px 35px hsla(0, 0%, 0%, .2)
+);
+
+@mixin box-shadow($box-shadow) {
+    -webkit-box-shadow: $box-shadow;
+    -moz-box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
+}
+
+@each $key, $value in $box-shadows {
+    $separator: if($key == "", "", "-");
+
+    .g--box-shadow#{$separator}#{$key} {
+        @include box-shadow($value)
+    }
+}
+
+//@each $key, $value in $box-shadows {
+//    $separator: "-";
+//
+//    @if $key == "" {
+//        $separator: "";
+//    }
+//
+//    .g--box-shadow#{$separator}#{$key} {
+//        @include box-shadow($value)
+//    }
+//}
+
+//@for $i from 1 through length($box-shadows) {
+//    $box-shadow: nth($box-shadows, $i);
+//
+//    .g--box-shadow-#{$i} {
+//        @include box-shadow($box-shadow);
+//    }
+//}
+
+//.g--box-shadow-none {
+//    @include box-shadow(none);
+//}
+
+//@for $i from 1 through length($box-shadows) {
+//    $box-shadow: nth($box-shadows, $i);
+//
+//    .g--box-shadow-#{$i} {
+//        @include box-shadow($box-shadow);
+//    }
+//}
+//
+//.g--box-shadow-none {
+//    @include box-shadow(none);
+//}
+
+//@for $n from 1 to length($box-shadows) {
+//    .g--box-shadow-#{$n} {
+//        box-shadow: nth($box-shadows, $n);
+//    }
+//}
+
+//@for $i from 1 through 5 {
+//    .g--box-shadow-#{$i} {
+//        box-shadow: 0 ($i*2px) ($i*3px) rgba(0,0,0,0.4);
+//    }
+//}
